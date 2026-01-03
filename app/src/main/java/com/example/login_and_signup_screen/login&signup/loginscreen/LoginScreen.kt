@@ -8,9 +8,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -18,15 +15,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.example.login_and_signup_screen.ui.theme.Brown
-import com.example.login_and_signup_screen.ui.theme.Cream
 
-@Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun MyLoginScreen() {
+fun MyLoginScreen(navController: NavHostController) {
     val config = LocalConfiguration.current
     Column(
         modifier = Modifier
@@ -57,7 +52,7 @@ fun MyLoginScreen() {
             )
         }
         Spacer(modifier = Modifier.height(25.dp))
-        MyCard()
+        MyCard(navController)
     }
 }
 

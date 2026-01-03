@@ -33,14 +33,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.example.login_and_signup_screen.ui.theme.Brown
 import com.example.login_and_signup_screen.ui.theme.Cream
 
-@Preview(showBackground = true)
 @Composable
-fun MySignUpCard() {
-    var email by remember { mutableStateOf("") }
-    var password by remember { mutableStateOf("") }
+fun MySignUpCard(navController: NavHostController) {
+    var emailId by remember { mutableStateOf("") }
+    var createPassword by remember { mutableStateOf("") }
     Card(
         modifier = Modifier
             .fillMaxWidth(),
@@ -60,7 +60,7 @@ fun MySignUpCard() {
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Text(
-                    "Login", modifier = Modifier
+                    "Login", modifier = Modifier.clickable(onClick = {navController.navigate(Routes.Login)})
                         .padding(start = 16.dp),
                     color = Brown,
                     fontSize = 25.sp,
@@ -68,7 +68,7 @@ fun MySignUpCard() {
                 )
 
                 Text(
-                    "Sign Up", modifier = Modifier.clickable(onClick = {})
+                    "Sign Up", modifier = Modifier
                         .padding(end = 16.dp),
                     color = Brown,
                     fontSize = 25.sp,
@@ -96,7 +96,7 @@ fun MySignUpCard() {
             Spacer(modifier = Modifier.height(20.dp))
 
             OutlinedTextField(
-                value = email,
+                value = emailId,
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(65.dp)
@@ -105,7 +105,7 @@ fun MySignUpCard() {
                         color = Brown,
                         shape = RoundedCornerShape(50.dp)
                     ),
-                onValueChange = { email = it },
+                onValueChange = { emailId = it },
                 colors = OutlinedTextFieldDefaults.colors(
                     unfocusedContainerColor = Color.White,
                     focusedContainerColor = Color.White,
@@ -129,7 +129,7 @@ fun MySignUpCard() {
             Spacer(modifier = Modifier.height(20.dp))
 
             OutlinedTextField(
-                value = password,
+                value = createPassword,
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(65.dp)
@@ -138,7 +138,7 @@ fun MySignUpCard() {
                         color = Brown,
                         shape = RoundedCornerShape(50.dp)
                     ),
-                onValueChange = { password = it },
+                onValueChange = { createPassword = it },
                 colors = OutlinedTextFieldDefaults.colors(
                     unfocusedContainerColor = Color.White,
                     focusedContainerColor = Color.White,

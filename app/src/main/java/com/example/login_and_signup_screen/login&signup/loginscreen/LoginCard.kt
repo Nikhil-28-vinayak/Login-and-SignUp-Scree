@@ -32,12 +32,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import com.example.login_and_signup_screen.login.Routes
 import com.example.login_and_signup_screen.ui.theme.Brown
 import com.example.login_and_signup_screen.ui.theme.Cream
 
 @Preview(showBackground = true)
 @Composable
-fun MyCard() {
+fun MyCard(navController: NavHostController) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     Card(
@@ -67,7 +69,7 @@ fun MyCard() {
                 )
 
                 Text(
-                    "Sign Up", modifier = Modifier.clickable(onClick = {})
+                    "Sign Up", modifier = Modifier.clickable(onClick = {navController.navigate(Routes.SignUp)})
                         .padding(end = 16.dp),
                     color = Brown,
                     fontSize = 25.sp,

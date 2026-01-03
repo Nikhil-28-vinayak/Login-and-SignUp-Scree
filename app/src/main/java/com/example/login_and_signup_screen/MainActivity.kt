@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.login_and_signup_scree.signupscreen.MySignUpScreen
+import com.example.login_and_signup_screen.login.navgraph
 import com.example.login_and_signup_screen.loginscreen.MyLoginScreen
 import com.example.login_and_signup_screen.ui.theme.Login_And_SignUp_ScreenTheme
 
@@ -21,7 +22,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             Login_And_SignUp_ScreenTheme {
-               MySignUpScreen()
+                  navgraph()
                 }
             }
         }
