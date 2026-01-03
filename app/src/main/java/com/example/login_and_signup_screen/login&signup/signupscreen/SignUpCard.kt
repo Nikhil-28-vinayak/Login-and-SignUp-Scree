@@ -1,17 +1,15 @@
-package com.example.login_and_signup_screen.loginscreen
+package com.example.login_and_signup_screen.login
 
-import androidx.compose.foundation.BorderStroke
+
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
@@ -21,18 +19,15 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
-import androidx.compose.material3.TabRow
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -43,7 +38,7 @@ import com.example.login_and_signup_screen.ui.theme.Cream
 
 @Preview(showBackground = true)
 @Composable
-fun MyCard() {
+fun MySignUpCard() {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     Card(
@@ -80,17 +75,17 @@ fun MyCard() {
                     fontWeight = FontWeight.Bold
                 )
             }
-            Row(modifier = Modifier.fillMaxWidth().padding(horizontal = 24.dp),
-                horizontalArrangement = Arrangement.Start) {
+            Row(modifier = Modifier.fillMaxWidth().padding(end = 30.dp),
+                horizontalArrangement = Arrangement.End) {
                 HorizontalDivider(
                     thickness = 2.dp,
                     color = Brown,
                     modifier = Modifier.width(100.dp)
                 )
             }
-                Spacer(modifier = Modifier.height(40.dp))
+            Spacer(modifier = Modifier.height(40.dp))
             Text(
-                "Email", modifier = Modifier
+                "Enter email id", modifier = Modifier
                     .fillMaxWidth()
                     .padding(start = 16.dp),
                 color = Brown,
@@ -123,7 +118,7 @@ fun MyCard() {
             Spacer(modifier = Modifier.height(20.dp))
 
             Text(
-                "Password", modifier = Modifier
+                "Create password", modifier = Modifier
                     .fillMaxWidth()
                     .padding(start = 16.dp),
                 color = Brown,
@@ -163,11 +158,11 @@ fun MyCard() {
                     .height(65.dp)
                     .padding(horizontal = 40.dp)
             ) {
-                Text("Login", fontSize = 30.sp, fontWeight = FontWeight.Bold)
+                Text("Sign Up", fontSize = 30.sp, fontWeight = FontWeight.Bold)
             }
             TextButton(onClick = {}) {
                 Text(
-                    "Or sign up here",
+                    "Or Login here",
                     color = Brown,
                     fontSize = 20.sp,
                     fontWeight = FontWeight.SemiBold
@@ -179,3 +174,4 @@ fun MyCard() {
         }
     }
 }
+
